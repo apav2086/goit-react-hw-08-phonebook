@@ -1,6 +1,8 @@
 .listItem {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    font-weight: 500;
     
 }
 
@@ -9,7 +11,7 @@ button {
         font-weight: 500;
         text-decoration: none;
         border-radius: 0.5rem;
-        border: none;
+        border: 2px solid;
         cursor: pointer;
         margin: 15px;
         padding: 8px 8px;
@@ -17,8 +19,15 @@ button {
     }
 
         button:hover {
-            background-color: #799FBA;
-            color: #ffff;
+            background-color: rgb(234, 247, 243);
+            color: rgb(2, 61, 25);
+            border-color: rgb(2, 61, 25);
             opacity: 1;
 
+        }
+
+        .h2 {
+            margin-left: 50px;
+            margin-top: 50px;
+            
         }

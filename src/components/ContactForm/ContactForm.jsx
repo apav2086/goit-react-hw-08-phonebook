@@ -4,6 +4,7 @@ import { fetchContacts, postContacts } from "../../redux/contacts/operators";
 import { getContacts } from "../../redux/contacts/selectors";
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
+import css from './contactForm.module.css';
 
 
 export default function ContactForm() {
@@ -44,10 +45,11 @@ export default function ContactForm() {
 }
 
   return (
-    <div>
-      <p>Name</p>
+    <div className={css.div}>
+      
       <form onSubmit={handleSubmit}>
-        <div className="inputContainer">
+        <div className={css.inputContainer}>
+          <p>Name</p>
           <input
             type="text"
             name="name"
@@ -60,7 +62,7 @@ export default function ContactForm() {
               }))}
           />
         </div>
-        <div className="inputContainer">
+        <div className={css.inputContainer}>
           <p>Number</p>
           <input
             type="tel"
@@ -74,7 +76,7 @@ export default function ContactForm() {
               }))}
           />
         </div>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={css.contactFormButton}>Add contact</button>
       </form>
           <Filter />   
 <ContactList /> 

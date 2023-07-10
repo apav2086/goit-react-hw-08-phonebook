@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logInUser} from 'redux/users/operators';
+import { logInUser } from 'redux/users/operators';
+import css from "./login.module.css";
 export default function Login() {
   const [formData, setFormData] = useState({
     email: '',
@@ -17,12 +18,12 @@ export default function Login() {
     });
   }
     return (
-        <div>
+        <div className={css.div}>
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="email" required value={formData.email}>Email:</label>
-        <input
+        <input className={css.input}
           type="email"
           id="email"
           name="email"
@@ -31,7 +32,7 @@ export default function Login() {
                 </div>
                 <div>
         <label htmlFor="password" required value={formData.password}>Password:</label>
-        <input
+        <input className={css.input}
           type="password"
           id="password"
           name="password"

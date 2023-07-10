@@ -27,7 +27,7 @@ export default function ContactList() {
   console.log(contacts);
   return (
     <div>
-      <h2>Contacts</h2>
+      <h2 className={css.h2}>Contacts</h2>
 
       {contacts && (
         <ul>
