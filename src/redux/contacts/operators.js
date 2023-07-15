@@ -5,7 +5,7 @@ export const fetchContacts = createAsyncThunk(
     'contact/get',
     async () => {
         try {
-            const response = await axios.get('/contacts');
+            const response = await axios.get('https://connections-api.herokuapp.com/contacts');
             return response.data;
         } catch (err) {
             return err;
@@ -14,14 +14,10 @@ export const fetchContacts = createAsyncThunk(
 
 export const postContacts = createAsyncThunk(
     'contact/post',
-    async data => {
-    const newContact = {
-        name: data.name,
-        phone: data.number,
-        createdAt: Date.now(),
-    }
+    async ({ name, number }) => {
+   
     try {
-        const response = await axios.post('/contacts', newContact);
+        const response = await axios.post('/contacts', { name, number });
         return response.data;
     } catch (err) {
         return err;
