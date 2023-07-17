@@ -1,11 +1,10 @@
 import { Link,useNavigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { logOutUser } from "redux/users/operators";
 import { isLoggedIn } from "redux/users/selectors";
 import css from './header.module.css';
-import UserMenu from "components/UserMenu/UserMenu";
 export default function Header() {
-
+    const dispatch = useDispatch();
     const nav = useNavigate();
     const loggedIn = useSelector(isLoggedIn);
     return (
@@ -15,7 +14,7 @@ export default function Header() {
                 <h2 className={css.name}>PhoneBook</h2>
             </Link>
                 {loggedIn ? ( 
-            <UserMenu />) : (
+            <button onClick={() => dispatch(logOutUser())}>Logout</button>) : (
             <button  onClick={() => nav('/login')}>Log In</button>)}
            </section>
         </div>
