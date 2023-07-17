@@ -15,6 +15,7 @@ export default function Login() {
     dispatch(logInUser(formData)).then(() => {
     
       nav('/');
+      
     });
   }
     return (
