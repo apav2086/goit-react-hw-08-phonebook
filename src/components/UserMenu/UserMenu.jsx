@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logOutUser } from "redux/users/operators";
-import { selectUser } from "redux/users/selectors";
+
 
 export default function UserMenu() {
-    const user = useSelector(selectUser);
+    const user = useSelector();
     const dispatch = useDispatch;
 
     return (
